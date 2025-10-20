@@ -1,0 +1,94 @@
+# CPU Tweaks
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_limit=5
+ro.vendor.qti.sys.fw.bservice_age=5000
+
+# GPU Tweaks for Mali-G57
+debug.hwui.renderer=skiavk
+debug.hwui.use_buffer_age=false
+debug.hwui.disable_draw_defer=true
+debug.hwui.disable_draw_reorder=true
+debug.hwui.fps_divisor=1
+debug.hwui.profile.maxframes=120
+
+# I/O Scheduler
+sys.io.scheduler=mq-deadline
+
+# Memory Tweaks
+ro.sys.fw.bg_apps_limit=32
+ro.vendor.qti.sys.fw.bg_apps_limit=32
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+
+# Battery Optimizations
+pm.sleep_mode=1
+power.saving.mode=1
+ro.vendor.powerhal.init=0
+ro.vendor.powerhal.scrollboost.enable=1
+
+# General System Tweaks
+ro.config.hw_quickpoweron=true
+ro.vendor.qti.sys.fw.use_trim_settings=true
+ro.vendor.qti.sys.fw.empty_app_percent=50
+ro.vendor.qti.sys.fw.trim_empty_percent=100
+ro.vendor.qti.sys.fw.trim_cache_percent=100
+ro.vendor.qti.sys.fw.trim_enable_memory=1073741824
+
+# Network Tweaks
+net.tcp.buffersize.default=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.wifi=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.umts=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.hsdpa=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.hspa=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.lte=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.evdo_b=4096,87380,110208,4096,16384,110208
+
+# Disable Debugging
+debug.atrace.tags.enableflags=0
+debug.egl.hw=1
+debug.mdpcomp.logs=0
+debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+debug.sf.enable_hwc_vds=1
+debug.sf.recomputecrop=0
+
+# Performance Boost
+ro.am.reschedule_service=true
+ro.sys.fw.bg_cached_ratio=0.33
+ro.sys.fw.change_to_service_delay=1000
+ro.sys.fw.empty_app_percent=50
+ro.sys.fw.trim_cache_percent=100
+ro.sys.fw.trim_empty_percent=100
+ro.sys.fw.trim_enable_memory=1073741824
+ro.sys.fw.use_trim_settings=true
+
+# ZRAM and Swappiness
+ro.vendor.qti.config.zram=true
+ro.vendor.qti.config.swap=true
+ro.vendor.qti.config.swappiness=100
+ro.vendor.qti.config.zram.size=50
+
+# CPU Governor Settings (for schedutil)
+cpu.sched_min_granularity_ns=10000000
+cpu.sched_wakeup_granularity_ns=15000000
+cpu.sched_migration_cost_ns=500000
+cpu.sched_min_task_util_for_colocation=0
+cpu.sched_min_task_util_for_boost=0
+cpu.sched_nr_migrate=32
+cpu.sched_rt_runtime_us=950000
+cpu.sched_rt_period_us=1000000
+cpu.sched_boost=0
+
+# GPU Frequency Scaling
+ro.gpu.freq.min=200000000
+ro.gpu.freq.max=1000000000
+
+# Disable Thermal Throttling (use with caution)
+ro.thermal_warmreset=false
+ro.thermal_shutdown=false
+
+# Additional Unisoc Specific Tweaks
+ro.vendor.unisoc.config.cpu_governor=schedutil
+ro.vendor.unisoc.config.io_scheduler=mq-deadline
+ro.vendor.unisoc.config.gpu_governor=simple_ondemand

@@ -1,0 +1,62 @@
+#!/sbin/sh
+
+#################
+# Initialization
+#################
+
+umask 022
+
+# echo before loading util_functions
+ui_print() { echo "$1"; }
+
+require_new_magisk() {
+  ui_print "*******************************"
+  ui_print " Please install Magisk v20.4+! "
+  ui_print "*******************************"
+  exit 1
+}
+
+#########################
+# Load util_functions.sh
+#########################
+
+OUTFD=$2
+ZIPFILE=$3
+
+mount /data 2>/dev/null
+
+[ -f /data/adb/magisk/util_functions.sh ] || require_new_magisk
+. /data/adb/magisk/util_functions.sh
+
+[ $MAGISK_VER_CODE -lt 20400 ] && require_new_magisk
+
+#################
+# Installation
+#################
+
+ui_print " "
+ui_print "======================================"
+ui_print "        MIKASATWEAK MAGISK MODULE     "
+ui_print "======================================"
+ui_print " "
+ui_print "Author: anothernop"
+ui_print "Version: v1.0"
+ui_print "Description: All-in-one tweaks for Unisoc T616"
+ui_print " "
+ui_print "Applying CPU, GPU, I/O, Memory & Battery Tweaks..."
+ui_print " "
+ui_print "Installation in progress..."
+ui_print " "
+
+install_module
+
+ui_print " "
+ui_print "======================================"
+ui_print "   MIKASATWEAK INSTALLED SUCCESSFULLY! "
+ui_print "======================================"
+ui_print " "
+ui_print "Enjoy optimized performance on your Unisoc T616 device!"
+ui_print "Reboot recommended for best results."
+ui_print " "
+
+exit 0
