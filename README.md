@@ -1,10 +1,10 @@
 # 🔥 MIKASATWEAK MAGISK MODULE 🔥
 
-## 🚀 Unleash the Power of Your Unisoc T616 Device!
+## 🚀 Unleash the Power of Your  Device!
 
 **Author:** anothernop  
 **Version:** v1.0  
-**Compatibility:** Unisoc T616 Chipset (Octa-core CPU, Mali-G57 GPU)
+**Compatibility:** may work on all devices
 
 ---
 
