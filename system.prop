@@ -4,7 +4,7 @@ ro.vendor.qti.sys.fw.bservice_limit=5
 ro.vendor.qti.sys.fw.bservice_age=5000
 
 # GPU Tweaks for Mali-G57
-debug.hwui.renderer=skiavk
+debug.hwui.renderer=skiagl
 debug.hwui.use_buffer_age=false
 debug.hwui.disable_draw_defer=true
 debug.hwui.disable_draw_reorder=true
